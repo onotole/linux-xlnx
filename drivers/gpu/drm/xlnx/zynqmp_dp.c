@@ -1006,7 +1006,8 @@ zynqmp_dp_aux_transfer(struct drm_dp_aux *aux, struct drm_dp_aux_msg *msg)
 					       msg->buffer, msg->size,
 					       &msg->reply);
 		if (!ret) {
-			dev_dbg(dp->dev, "aux %d retries\n", i);
+			if (i)
+				dev_dbg(dp->dev, "aux %d retries\n", i);
 			return msg->size;
 		}
 
