@@ -1762,6 +1762,8 @@ int zynqmp_dp_probe(struct zynqmp_dpsub *dpsub)
 
 	dpsub->dp = dp;
 
+	drm_bridge_add(dpsub->bridge);
+
 	dev_dbg(dp->dev, "ZynqMP DisplayPort Tx probed with %u lanes\n",
 		dp->num_lanes);
 
@@ -1790,4 +1792,6 @@ void zynqmp_dp_remove(struct zynqmp_dpsub *dpsub)
 
 	zynqmp_dp_phy_exit(dp);
 	zynqmp_dp_reset(dp, true);
+
+	drm_bridge_remove(dpsub->bridge);
 }
