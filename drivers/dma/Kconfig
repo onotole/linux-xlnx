@@ -682,6 +682,7 @@ config XILINX_DMA
 	tristate "Xilinx AXI DMAS Engine"
 	depends on HAS_IOMEM
 	select DMA_ENGINE
+	default y
 	help
 	  Enable support for Xilinx AXI VDMA Soft IP.
 
