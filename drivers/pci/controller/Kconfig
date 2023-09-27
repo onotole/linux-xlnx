@@ -329,6 +329,7 @@ config PCIE_XILINX_DMA_PL
 	depends on ARCH_ZYNQMP || COMPILE_TEST
 	depends on PCI_MSI
 	select PCI_HOST_COMMON
+	default y
 	help
 	  Add support for the Xilinx PL DMA PCIe host bridge,
 	  The controller is soft IP which can act as Root Port.
